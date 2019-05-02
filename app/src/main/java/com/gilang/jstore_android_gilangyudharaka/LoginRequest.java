@@ -2,9 +2,9 @@ package com.gilang.jstore_android_gilangyudharaka;
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
-
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class LoginRequest extends StringRequest {
     private static final String Regis_URL = "http://10.0.2.2:8080/logincust";

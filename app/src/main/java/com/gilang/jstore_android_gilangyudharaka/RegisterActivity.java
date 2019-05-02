@@ -24,8 +24,6 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText passwordInput = (EditText) findViewById(R.id.passwordInput);
         final Button registerButton = (Button) findViewById(R.id.loginButton);
 
-
-
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
                 RegisterRequest registerRequest = new RegisterRequest(inputName, inputEmail, inputPassword, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
+
             }
         });
     }
