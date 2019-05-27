@@ -1,26 +1,26 @@
 package com.gilang.jstore_android_gilangyudharaka;
 
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainListAdapter extends BaseExpandableListAdapter {
-
     private Context _context;
-    private ArrayList<Supplier> _listDataHeader; // header titles
-    // child data in format of header title, child title
-    private HashMap<Supplier, ArrayList<Item>> _listDataChild;
+    private ArrayList<String> _listDataHeader;
+    private HashMap<String, ArrayList<String>> _listDataChild;
 
-    public MainListAdapter(Context context, ArrayList<Supplier> listDataHeader,
-                           HashMap<Supplier, ArrayList<Item>> listChildData) {
+    public MainListAdapter(Context context,
+                           ArrayList<String> listDataHeader,
+                           HashMap<String, ArrayList<String>> listChildData) {
+
         this._context = context;
         this._listDataHeader = listDataHeader;
         this._listDataChild = listChildData;
@@ -49,7 +49,7 @@ public class MainListAdapter extends BaseExpandableListAdapter {
             convertView = infalInflater.inflate(R.layout.layout_item, null);
         }
 
-        TextView txtListChild = (TextView) convertView
+        TextView txtListChild = convertView
                 .findViewById(R.id.child);
 
         txtListChild.setText(childText);
